@@ -8,6 +8,8 @@ pipeline {
     }*/
 	
     environment {
+        
+	KUBECONFIG = '~.kube/config'
         registry = "adeel2020/vproappdock"
         registryCredential = "dockerhub"
     }
@@ -103,6 +105,7 @@ pipeline {
                 label 'KOPS'  --  KOPS used on separate machine therefore no need to add the agent
             }*/
         	steps{
+			sh 'kubectl get pods'
                 	sh 'helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod'
             	}
         }
