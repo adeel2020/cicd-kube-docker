@@ -51,7 +51,7 @@ pipeline {
             }
         }
 	stage('Kubernetes TEST'){
-		withKubeConfig([credentialsId: 'k8s, serverUrl: 'https://api.corecloud.mobile.ae']) {
+		withKubeConfig([credentialsId: 'k8s', serverUrl: 'https://api.corecloud.mobile.ae']) {
                  sh 'kubectl get pods'
                 }
 	}
