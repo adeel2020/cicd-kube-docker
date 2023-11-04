@@ -31,7 +31,7 @@ pipeline {
 	stage('UNIT TEST'){
             steps {
                 sh 'mvn test'
-            }
+       	     }
         }
 
 	stage('INTEGRATION TEST'){
@@ -50,10 +50,12 @@ pipeline {
                 }
             }
         }
-	stage('Kubernetes TEST'){
-		withKubeConfig([credentialsId: 'k8s', serverUrl: 'https://api.corecloud.mobile.ae']) {
+	node{
+	  stage('Kubernetes TEST'){
+            withKubeConfig([credentialsId: 'k8s', serverUrl: 'https://api.corecloud.mobile.ae']) {
                  sh 'kubectl get pods'
-                }
+            }
+	  }
 	}
         stage('CODE ANALYSIS with SONARQUBE') {
           
