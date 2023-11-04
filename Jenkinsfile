@@ -8,7 +8,7 @@ pipeline {
     }*/
 	
     environment {
-        registry = "adee2020/vproappdock"
+        registry = "adeel2020/vproappdock"
         registryCredential = "dockerhub"
     }
 	
