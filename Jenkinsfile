@@ -103,8 +103,7 @@ pipeline {
                 label 'KOPS'  --  KOPS used on separate machine therefore no need to add the agent
             }*/
         steps{
-                sh "helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} \
-                -- namespace prod"
+                sh "helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} -- namespace prod"
             }
         }
             
