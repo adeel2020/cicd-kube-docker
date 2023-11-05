@@ -105,7 +105,7 @@ pipeline {
           }
     	    steps{
 		//	sh 'kubectl get pods'
-           	    	sh 'helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod -v 20'0
+           	    	sh 'helm upgrade --install --force vprofile-stack helm/vprofilecharts --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod -v 20'
             }
         }
             
