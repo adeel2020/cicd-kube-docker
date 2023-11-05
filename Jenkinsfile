@@ -101,7 +101,7 @@ pipeline {
 
         stage('Kubernetes Deploy') {
           agent {
-                label 'KOPS'  --  KOPS used on separate machine therefore no need to add the agent
+                label 'KOPS' 
           }
     	    steps{
 			sh 'kubectl get pods'
