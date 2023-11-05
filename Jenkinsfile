@@ -9,7 +9,7 @@ pipeline {
 	
     environment {
         
-	KUBECONFIG = '$HOME/.kube/config'
+	KUBECONFIG = '${HOME}/.kube/config'
         registry = "adeel2020/vproappdock"
         registryCredential = "dockerhub"
     }
